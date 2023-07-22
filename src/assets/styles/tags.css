@@ -1,0 +1,137 @@
+input[type="number"],
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+input {
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select::-webkit-scrollbar {
+  width: 0;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0;
+  resize: vertical;
+}
+
+
+label {
+  transition: 0.2s !important;
+}
+
+
+select {
+  position: relative;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url('../images/arrow-down-s-line.png') no-repeat right center !important;
+  /* background: #F7F7F7 url('../images/arrow-down-s-line.png') no-repeat right center !important; */
+  background-position-x: calc(100% - 10px) !important;
+  background-size: 26px !important;
+}
+
+
+
+
+textarea:focus + label,
+textarea:valid + label {
+  top: 5px;
+  left: 17.5px;
+  font-size: 9px;
+  line-height: 12px;
+  color: var(--color);
+  letter-spacing: 0.5px;
+}
+
+input:focus + label,
+input:valid + label {
+  top: 5px !important;
+  left: 17.5px !important;
+  font-size: 9px !important;
+  line-height: 12px !important;
+  color: var(--color) !important;
+  letter-spacing: 0.5px !important;
+  background-color: transparent !important;
+}
+
+select:focus + label,
+select:valid + label {
+  top: 5px !important;
+  left: 17.5px !important;
+  font-size: 9px !important;
+  line-height: 12px !important;
+  color: var(--color) !important;
+  letter-spacing: 0.5px !important;
+}
+
+
+
+
+
+input + label,
+input + label {
+  line-height: 26px;
+  background-color: #F7F7F7;
+}
+
+input[type="time"] + label,
+input[type="time"] + label {
+  width: 65%;
+  line-height: 26px;
+  background-color: #F7F7F7;
+}
+
+
+
+input::-webkit-search-cancel-button {
+  right: -3px;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="time"]::-webkit-datetime-edit,
+input[type="date"]::-webkit-datetime-edit,
+input[type="datetime-local"]::-webkit-datetime-edit {
+  color: transparent !important;
+}
+
+input[type="time"]:focus::-webkit-datetime-edit,
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="datetime-local"]:focus::-webkit-datetime-edit {
+  color: black !important;
+}
+
+input[type="time"]:valid::-webkit-datetime-edit,
+input[type="date"]:valid::-webkit-datetime-edit,
+input[type="datetime-local"]:valid::-webkit-datetime-edit {
+  color: #010e38 !important;
+}
+
+input[type="time"]:invalid::-webkit-datetime-edit,
+input[type="date"]:invalid::-webkit-datetime-edit,
+input[type="datetime-local"]:invalid::-webkit-datetime-edit {
+  color: transparent !important;
+}
+
+
+
+
+/* required input */
+
+input[type="date"]:required:valid::-webkit-datetime-edit,
+input[type="datetime-local"]:required:valid::-webkit-datetime-edit {
+  color: #010e38 !important;
+}
+
+input[type="date"]:required:invalid::-webkit-datetime-edit,
+input[type="datetime-local"]:required:invalid::-webkit-datetime-edit {
+  color: transparent !important;
+}
