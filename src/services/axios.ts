@@ -9,25 +9,11 @@ export const axiosInstance = axios.create({
   },
 });
 
-export const axiosInstanceColls = axios.create({
-  baseURL: 'https://api2.onlinepbx.ru/pbx15325.onpbx.ru/',
-  timeout: 20000,
-  headers: {
-    'Content-Type': 'application/json',
-  }
-});
-
-export const axiosInstanceOrder = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL as string,
-  timeout: 20000,
-  headers: {
-    'Content-Type': 'application/json',
-  }
-});
 
 axiosInstance.interceptors.request.use(
   config => {
     const token = localStorage.getItem('token')
+    // @ts-ignore
     config.headers = {
       'Authorization': `Bearer ` + token
     }
@@ -39,34 +25,7 @@ axiosInstance.interceptors.request.use(
   }
 )
 
-axiosInstanceColls.interceptors.request.use(
-  config => {
-    const key = localStorage.getItem('key')
-    const key_id = localStorage.getItem('key_id')
-    config.headers = {
-      'x-pbx-authentication': `${key_id}:${key}`
-    }
 
-    return config
-  },
-  error => {
-    return Promise.reject(error)
-  }
-)
-
-axiosInstanceOrder.interceptors.request.use(
-  config => {
-    const orderToken = localStorage.getItem('orderToken')
-    config.headers = {
-      'Authorization': `Bearer ` + orderToken
-    }
-
-    return config
-  },
-  error => {
-    return Promise.reject(error)
-  }
-)
 
 axiosInstance.interceptors.response.use((response) => {
   return response;

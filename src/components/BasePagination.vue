@@ -55,7 +55,7 @@ const emit = defineEmits(["change"]);
 <template>
     <div class="flex mt-30">
       <button v-if="data.active > 5" class="w-51 h-51 flex items-center justify-center rounded border border-gray-secondary font-medium bg-white-secondary mr-10" @click="previous">
-        <img class="w-24 h-24" src="@/assets/images/arrow-left.png" alt="">
+        <!-- <img class="w-24 h-24" src="@/assets/images/arrow-left.png" alt=""> -->
       </button>
       <button v-if="pages.length > 0"  class="w-51 h-51 rounded border border-gray-secondary font-medium mr-10" :class="data.active === 1 ? 'bg-yellow-primary': 'bg-white-secondary'" @click="data.page = 1; toggleActive(1)">
         1
@@ -91,7 +91,7 @@ const emit = defineEmits(["change"]);
         {{pages.slice(-1)[0]}}
       </button>
       <button v-if="pages.length > 5 && data.page + 5 <= pages.length" class="w-51 h-51 flex items-center justify-center rounded border border-gray-secondary font-medium bg-white-secondary mr-10" @click="next">
-        <img class="w-24 h-24 rotate-180" src="@/assets/images/arrow-left.png" alt="">
+        <!-- <img class="w-24 h-24 rotate-180" src="@/assets/images/arrow-left.png" alt=""> -->
       </button>
     </div>
 </template>

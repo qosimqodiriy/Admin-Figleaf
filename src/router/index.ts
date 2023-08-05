@@ -30,13 +30,61 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/index.vue')
+      component: () => import('../views/order/index.vue')
+    },
+
+    {
+      path: '/order',
+      name: 'orderInfo',
+      component: () => import('../views/order/OrderInfo.vue')
     },
 
     {
       path: '/login',
       name: 'login',
       component: () => import('../views/login/index.vue')
+    },
+
+    {
+      path: '/products',
+      name: 'products',
+      component: () => import('../views/products/index.vue')
+    },
+
+    {
+      path: '/product',
+      name: 'product',
+      component: () => import('../views/products/ProductInfo.vue')
+    },
+
+    {
+      path: '/categories',
+      name: 'categories',
+      component: () => import('../views/category/index.vue')
+    },
+
+    {
+      path: '/banners',
+      name: 'banners',
+      component: () => import('../views/banners/index.vue')
+    },
+
+    {
+      path: '/types',
+      name: 'types',
+      component: () => import('../views/types/index.vue')
+    },
+
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('../views/contact/index.vue')
+    },
+
+    {
+      path: '/socials',
+      name: 'socials',
+      component: () => import('../views/socials/index.vue')
     }
   ]
 })

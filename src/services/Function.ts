@@ -9,7 +9,7 @@ export function phoneNum(phone: string) {
       const num2 = phone.slice(9, 11);
       const num3 = phone.slice(11, 13);
 
-      return `(${code}) ${num1}-${num2}-${num3}`
+      return `${country} (${code}) ${num1}-${num2}-${num3}`
 
     } else if (phone.length == 9) {
       const code = phone.slice(0, 2);

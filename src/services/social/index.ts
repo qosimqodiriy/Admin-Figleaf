@@ -1,12 +1,10 @@
-import type { Form } from './entity'
+import type { SocialForm } from './entity'
 
 export * from './api'
-export type { Social, Form } from './entity'
-export * from '../common'
+export type { Social, SocialForm } from './entity'
 
-export function reset(obj: Form) {
+export function reset(obj: SocialForm) {
   obj.id = null,
-  obj.priority = null,
   obj.url = '',
   obj.icon = ''
 }

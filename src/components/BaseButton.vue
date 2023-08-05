@@ -20,7 +20,7 @@ const props = defineProps({
 
 </script>
 <template>
-    <button class="btn px-15 py-8 md:px-20 md:py-10 lg:px-25 lg:py-12 flex items-center gap-5" :class="props.loading ? 'loading' : ''">
+    <button class="btn px-15 py-5 md:px-20 md:py-8 lg:px-25 lg:py-10 flex items-center gap-5" :class="props.loading ? 'loading' : ''">
         <img v-if="props.plus" class="w-20 h-20" src="@/assets/images/add-white.png" alt="">
         <div class="flex items-center gap-3">
             <p class="btn_text hidden md:block">{{ props.hideText }}</p>
@@ -36,7 +36,7 @@ const props = defineProps({
     border-radius: 5px;
     position: relative;
     white-space: nowrap;
-    background: #1363F3;
+    background: #009A10;
 }
 
 .btn_text {

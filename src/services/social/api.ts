@@ -1,9 +1,9 @@
 import { axiosInstance } from "../axios";
-import type { Social, Form } from "./entity";
+import type { Social, SocialForm } from "./entity";
 
 export async function getSocials(): Promise<[any, any]> {
   try {
-    const response = await axiosInstance.get(`admin/about/socials`) as { data: { list: Social[] } }
+    const response = await axiosInstance.get('socials') as { data: { list: Social[] } }
     return [null, response.data]
   }
   catch (error) {
@@ -11,10 +11,11 @@ export async function getSocials(): Promise<[any, any]> {
   }
 }
 
-export async function postSocial(formInfo: Form) {
+
+export async function postPutSocial(formInfo: SocialForm) {
   try {
     const response = await axiosInstance({
-      url: 'admin/about/social',
+      url: 'social',
       method: formInfo.id === null ? 'POST' : 'PUT',
       data: formInfo
     })

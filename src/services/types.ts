@@ -1,5 +1,5 @@
 export interface Lang {
-  uz: string,
+  uz?: string,
   ru?: string,
   eng?: string
 }

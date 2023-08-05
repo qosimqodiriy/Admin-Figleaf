@@ -1,10 +1,30 @@
 [
   {
     "path": "/",
-    "content": "Dashboard"
+    "content": "Buyurtmalar"
   },
   {
-    "path": "/",
-    "content": "Shartnomalar"
+    "path": "/products",
+    "content": "Mahsulotlar"
+  },
+  {
+    "path": "/categories",
+    "content": "Kategoriyalar"
+  },
+  {
+    "path": "/banners",
+    "content": "Bannerlar"
+  },
+  {
+    "path": "/types",
+    "content": "Bo'limlar"
+  },
+  {
+    "path": "/contact",
+    "content": "Bog‘lanish"
+  },
+  {
+    "path": "/socials",
+    "content": "Ijtimoiy tarmoqlar"
   }
 ]
