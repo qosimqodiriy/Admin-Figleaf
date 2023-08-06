@@ -85,6 +85,12 @@ const router = createRouter({
       path: '/socials',
       name: 'socials',
       component: () => import('../views/socials/index.vue')
+    },
+
+    {
+      path: '/password',
+      name: 'password',
+      component: () => import('../views/password/index.vue')
     }
   ]
 })

@@ -26,5 +26,9 @@
   {
     "path": "/socials",
     "content": "Ijtimoiy tarmoqlar"
+  },
+  {
+    "path": "/password",
+    "content": "Password"
   }
 ]

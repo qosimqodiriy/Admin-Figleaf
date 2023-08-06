@@ -30,9 +30,9 @@ const props = defineProps({
             <div role="button" class="changeBox bg-yellow-secondary w-36 h-36 shrink-0 flex items-center justify-center rounded-full border border-gray-secondary shadow-sm" @click="emit('edit', props.item)">
                 <img class="w-20 h-20" src="@/assets/images/edit.png" alt="">
             </div>
-            <div role="button" class="changeBox bg-red-secondary w-36 h-36 shrink-0 flex items-center justify-center rounded-full border border-gray-secondary shadow-sm" @click="emit('remove', props)">
+            <!-- <div role="button" class="changeBox bg-red-secondary w-36 h-36 shrink-0 flex items-center justify-center rounded-full border border-gray-secondary shadow-sm" @click="emit('remove', props)">
                 <img class="w-20 h-20" src="@/assets/images/delete.png" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

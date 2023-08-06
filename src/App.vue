@@ -16,21 +16,16 @@ const data = reactive<{token: string | null, name: string, phone: string }>({
 })
 
 function handleUser() {
-  data.token = localStorage.getItem('token')
+  data.token = sessionStorage.getItem('token')
 
-  setTimeout(() => {
-    sessionStorage.setItem('path', route.fullPath)
-    setTimeout(() => {
-      if (data.token == null) {
-        router.push('/login')
-      }
-    }, 100);
-  }, 10);
+  if (data.token == null) {
+    router.push('/login')
+  }
   
   setTimeout(handleUser, 100)
 }
 
-// handleUser()
+handleUser()
 
 
 
