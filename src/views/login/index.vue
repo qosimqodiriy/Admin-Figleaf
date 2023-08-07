@@ -19,7 +19,7 @@ const path = sessionStorage.getItem('path')
 function handleSubmit() {
     data.loading = true;
     if (data.passwordError === '') {
-        data.loading = true;
+      data.loading = true;
       handleAuth(data.login, data.password).then((res: any) => {
         console.log(res);
 

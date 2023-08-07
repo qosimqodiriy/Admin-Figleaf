@@ -6,7 +6,6 @@ import {  OPEN_LOADING_MODAL, CLOSE_LOADING_MODAL, OPEN_NOTIFICATION } from '@/s
 
 const modalRef = ref()
 const TheModal = defineAsyncComponent(() => import('./TheModal.vue'))
-// const SocialItem = defineAsyncComponent(() => import('./SocialItem.vue'));
 
 
 const data = ref<{ formInfo: Password}>({
@@ -22,22 +21,10 @@ async function getItems() {
    const [error, response] = await getPassword()
    console.log(response);
    CLOSE_LOADING_MODAL()
-   data.value.formInfo = response
+   data.value.formInfo = response[0];
+   console.log(data.value.formInfo);
+   
 }
-
-
-
-// document.addEventListener('keydown', evt => {
-//     if (evt.key === 'Escape') {
-//         _changeBox.value = false;
-//     }
-// });
-
-// document.addEventListener('click', (evt: any) => {
-//     if (!evt?.srcElement?.classList.contains('img_more')) {
-//         _changeBox.value = false;
-//     }
-// });
 
 
 
@@ -47,16 +34,8 @@ function openModal(val: any) {
 }
 
 onMounted(() => {
-    // getItems()
+    getItems()
 })
-
-// onUnmounted(() => {
-//     show.value = false
-// })
-
-
-
-// OPEN_DELETE_MODAL({ callback: getItems, text: 'ijtimoiy tarmoq', title: item.title.uz, url: `merchant/category/group/${item.id}` })
 </script>
 
 
@@ -66,8 +45,8 @@ onMounted(() => {
         <p class="title">Fig-Leaf</p>
 
         <div class="card max-w-500 border border-gray-secondary bg-white-primary rounded-10 p-20 relative">
-            <p class="text-20 font-semibold mb-10">Login: {{  }}</p>
-            <p class="text-20 font-semibold">Password: {{  }}</p>
+            <p class="text-20 font-semibold mb-10">Login: {{ data.formInfo.username }}</p>
+            <p class="text-20 font-semibold">Password: {{ data.formInfo.password }}</p>
 
             <div class="changeBox absolute top-10 right-10 border border-gray-secondary rounded-full w-36 h-36 flex items-center justify-center cursor-pointer bg-yellow-secondary" @click="openModal(data.formInfo)">
                 <img class="w-21 h-21" src="../../assets/images/edit.png" alt="">

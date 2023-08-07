@@ -7,45 +7,47 @@ import type { Password, PasswordForm, } from '@/services/password';
 const loading = ref(false)
 const emit = defineEmits(["refresh", "toast"])
 const data = reactive<{ display: boolean, formInfo: PasswordForm, error: boolean, message: string }>({
-    message: '',
-    error: false,
-    display: false,
-    formInfo: {
-        id: 0,
-        username: '',
-        password: '',
-    }
+  message: '',
+  error: false,
+  display: false,
+  formInfo: {
+    id: 0,
+    username: '',
+    password: '',
+  }
 });
 
 
 async function assign(item: Password) {
-    Object.assign(data.formInfo, item)
+  Object.assign(data.formInfo, item)
 }
 
 function open(item: Password) {
-    assign(item)
-    data.display = true
+  assign(item)
+  data.display = true
 }
 
 async function submit() {
-    loading.value = true
+  loading.value = true
+  
+  putPassword(data.formInfo).then((res: any) => {
+    sessionStorage.setItem('token', res[1].data.token);
     
-    putPassword(data.formInfo).then((res: any) => {
-        if (res[1] !== null && res[1] !== undefined) {
-            data.display = false
-            loading.value = false
-            emit('toast', 'Password yangilandi')
-        } else {
-            data.error = true
-            console.log(res[0]);
-            loading.value = false;
-            data.message = res[0].message;
+    if (res[1] !== null && res[1] !== undefined) {
+        data.display = false
+        loading.value = false
+        emit('toast', 'Password yangilandi')
+    } else {
+        data.error = true
+        console.log(res[0]);
+        loading.value = false;
+        data.message = res[0].message;
 
-            setTimeout(() => {
-                data.error = false;
-            }, 3000);
-        }
-    })
+        setTimeout(() => {
+            data.error = false;
+        }, 3000);
+    }
+  })
 }
 
 

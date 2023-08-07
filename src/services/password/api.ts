@@ -3,7 +3,7 @@ import type { Password, PasswordForm } from "./entity";
 
 export async function getPassword(): Promise<[any, any]> {
   try {
-    const response = await axiosInstance.get('admin/auth') as { data: Password }
+    const response = await axiosInstance.get('admins') as { data: Password }
     return [null, response.data]
   }
   catch (error) {
@@ -15,7 +15,7 @@ export async function getPassword(): Promise<[any, any]> {
 export async function putPassword(formInfo: PasswordForm) {
   try {
     const response = await axiosInstance({
-      url: 'admin/auth',
+      url: 'admin/password',
       method: 'PUT',
       data: formInfo
     })
