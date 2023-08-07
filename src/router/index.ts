@@ -82,6 +82,12 @@ const router = createRouter({
     },
 
     {
+      path: '/images',
+      name: 'images',
+      component: () => import('../views/images/index.vue')
+    },
+
+    {
       path: '/socials',
       name: 'socials',
       component: () => import('../views/socials/index.vue')
