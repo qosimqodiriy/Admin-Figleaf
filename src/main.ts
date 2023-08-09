@@ -7,6 +7,7 @@ import './assets/styles/style.css'
 
 import Header from '@/components/Header.vue'
 import ImageBox from '@/components/ImageBox.vue'
+import VideoBox from '@/components/VideoBox.vue'
 import BaseImage from '@/components/BaseImage.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import DeleteModal from '@/components/DeleteModal.vue'
@@ -20,6 +21,7 @@ const app = createApp(App)
 app.component('Header', Header)
 app.component('Modal', GlobalModal)
 app.component('ImageBox', ImageBox)
+app.component('VideoBox', VideoBox)
 app.component('BaseImage', BaseImage)
 app.component('BaseButton', BaseButton)
 app.component('DeleteModal', DeleteModal)

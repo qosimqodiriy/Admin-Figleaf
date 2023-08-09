@@ -12,6 +12,7 @@ const route = useRoute()
 const data = ref<{ formInfo: OrderForm }>({
     formInfo: {
         id: 0,
+        createAt: '',
         phone: '',
         name: '',
         email: '',
@@ -61,6 +62,10 @@ onMounted(() => {
         
 
         <div class="bg-white-primary p-15 md:p-20 lg:p-30 rounded-10 lg:rounded-20 space-y-15 max-w-700 mb-40">
+            <div v-if="data.formInfo && data.formInfo.createAt" class="flex items-center gap-15">
+                <img class="w-24 h-24 object-cover" src="../../assets/icons/time.png" alt="">
+                <p class="text-18 leading-20">{{ data.formInfo.createAt }}</p>
+            </div>
             <div class="flex items-center gap-15">
                 <img class="w-24 h-24 object-cover" src="../../assets/icons/user.png" alt="">
                 <p class="text-26 leading-24">{{ data.formInfo.name }}</p>

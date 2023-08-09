@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { formatPrice } from '@/services/Function';
+
 const props = defineProps({ item: { type: Object, required: true } })
 </script>
 
@@ -23,8 +25,8 @@ const props = defineProps({ item: { type: Object, required: true } })
         </div>
 
         <div class="flex items-center justify-between gap-10 mb-10">
-            <p class="text-17">Mahsulot soni: </p>
             <p class="text-17">{{ item.count }} ta</p>
+            <p class="text-17">{{ formatPrice(item.count * item.price) }} so'm</p>
         </div>
         
         <div class="flex items-center justify-center flex-1 w-full relative min-h-250">

@@ -5,6 +5,7 @@ export type { Order, OrderForm } from './entity'
 
 export function reset(obj: OrderForm) {
   obj.id = null,
+  obj.createAt = '',
   obj.phone = '',
   obj.name = '',
   obj.email = '',

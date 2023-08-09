@@ -79,7 +79,6 @@ async function submit() {
 
 function close() {
 //   emit("refresh")
-  reset(data.formInfo)
   data.display = false
 }
 
@@ -100,31 +99,31 @@ defineExpose({
 
   
           <form @submit.prevent="submit" class="w-full">
-            <div class="flex w-full h-full items-stretch gap-5 mb-20">
+            <div class="flex w-full h-full items-stretch gap-5 mb-20 rounded-10 overflow-hidden">
                 <div class="flex flex-col gap-5">
-                    <div class="w-100 h-80 border border-gray-secondary rounded-3 overflow-hidden">
+                    <div class="w-100 h-80 rounded-3 overflow-hidden">
                         <image-box ref="image_ref_1"  class="w-full h-full" />
                     </div>
-                    <div class="w-100 h-80 border border-gray-secondary rounded-3 overflow-hidden">
+                    <div class="w-100 h-80 rounded-3 overflow-hidden">
                         <image-box ref="image_ref_2"  class="w-full h-full" />
                     </div>
                 </div>
-                <div class="w-full h-165 border border-gray-secondary rounded-3 overflow-hidden">
+                <div class="w-full h-165 rounded-3 overflow-hidden">
                     <image-box ref="image_ref_3"  class="w-full h-full" />
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
-                <div class="w-full h-120 md:h-full md:row-span-2 border border-gray-secondary rounded-3 overflow-hidden">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-5 rounded-10 overflow-hidden">
+                <div class="w-full h-120 md:h-full md:row-span-2 rounded-3 overflow-hidden">
                     <image-box ref="image_ref_4"  class="w-full h-full" />
                 </div>
-                <div class="w-full md:col-span-2 h-120 border border-gray-secondary rounded-3 overflow-hidden">
+                <div class="w-full md:col-span-2 h-120 rounded-3 overflow-hidden">
                     <image-box ref="image_ref_5"  class="w-full h-full" />
                 </div>
-                <div class="w-full h-120 border border-gray-secondary rounded-3 overflow-hidden">
+                <div class="w-full h-120 rounded-3 overflow-hidden">
                     <image-box ref="image_ref_6"  class="w-full h-full" />
                 </div>
-                <div class="w-full h-120 border border-gray-secondary rounded-3 overflow-hidden">
+                <div class="w-full h-120 rounded-3 overflow-hidden">
                     <image-box ref="image_ref_7"  class="w-full h-full" />
                 </div>
             </div>

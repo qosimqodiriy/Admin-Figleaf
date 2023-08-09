@@ -11,6 +11,16 @@ export async function getImages(): Promise<[any, any]> {
   }
 }
 
+export async function getVideos(): Promise<[any, any]> {
+  try {
+    const response = await axiosInstance.get('video') as { data: string }
+    return [null, response.data]
+  }
+  catch (error) {
+    return [error, null]
+  }
+}
+
 
 export async function putImage(formInfo: ImageForm) {
   try {
@@ -18,6 +28,23 @@ export async function putImage(formInfo: ImageForm) {
       url: 'image',
       method: 'PUT',
       data: formInfo
+    })
+    return [null, response]
+  }
+  catch (error) {
+    return [error, null]
+  }
+}
+
+
+export async function putVideo(video: string) {
+  try {
+    const response = await axiosInstance({
+      url: 'video',
+      method: 'PUT',
+      data: {
+        video: video
+      }
     })
     return [null, response]
   }

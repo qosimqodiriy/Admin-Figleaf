@@ -3,7 +3,7 @@ import { axiosInstance } from "./axios";
 export async function uploadPhoto(img: any): Promise<[any, any]> {
   try {
     const response = await axiosInstance({
-      method: 'post',
+      method: 'POST',
       url: 'upload/image',
       data: img
     })
@@ -12,6 +12,21 @@ export async function uploadPhoto(img: any): Promise<[any, any]> {
     return [error, null]
   }
 }
+
+
+export async function uploadVideo(obj: {}): Promise<[any, any]> {
+  try {
+    const response = await axiosInstance({
+      method: 'POST',
+      url: 'upload/video',
+      data: obj
+    })
+    return [null, response]
+  } catch (error) {
+    return [error, null]
+  }
+}
+
 
 export async function deleteItem(obj: {id: number}, url: string): Promise<[any, any]> {
   try {
@@ -25,6 +40,7 @@ export async function deleteItem(obj: {id: number}, url: string): Promise<[any, 
     return [error, null]
   }
 }
+
 
 export async function handleAuth( username: string, password: string ): Promise<[any, any]> {
   try {
